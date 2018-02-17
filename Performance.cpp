@@ -28,7 +28,7 @@ void Performance::write_file(vector< vector<float> > input_vec, string filename)
 {
     //writes a vector of floats into a .txt file. Values separated by \n
     ofstream outputFile;
-    outputFile.open(filename);
+    outputFile.open(filename.c_str());
     for(int i=0; i<input_vec.size();i++)
     {
         for(int j =0; j<input_vec[j].size(); j++)
@@ -42,7 +42,7 @@ void Performance::write_file(vector< vector<float> > input_vec, string filename)
 float Performance::sharpe_ratio()
 {
     //calculate the sharpe ratio for the simulation...
-    vector<float> risk_free_data = read_csv("C:/Users/Class2016/Downloads/RiskFree.csv");
+    vector<float> risk_free_data = read_csv("/home/b1/Bollinger_Bands-master/CSV/RiskFree.csv");
     for(int i =0; i<risk_free_data.size(); i++)
     {
         if(risk_free_data[i] >1)

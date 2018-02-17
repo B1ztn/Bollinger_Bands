@@ -10,13 +10,12 @@
  *
  * Created on February 14, 2018, 2:07 PM
  */
+
 #include <iostream>
 #include <vector>
 #include "Strategy.h"
 #include <string>
 #include <cmath>
-#include <cstdlib>
-
 using namespace std;
 
 /*
@@ -68,7 +67,7 @@ vector<float> Strategy::subset(int first, int last, vector<float> vec)
     //it is a shrinking vector.....
     vector<float>::const_iterator beg = vec.begin()+first;
     vector<float>::const_iterator end = vec.begin()+last;
-    vector<float> subset_vec(beg,end);
+    vector< float > subset_vec(beg,end);
     return subset_vec;
     
 }
@@ -97,7 +96,7 @@ void Strategy::sell(int num_shares, float price)
 void Strategy::buy(int num_shares, float price)
 {
     // buy a number of shares at a certain prices....
-    for(int i=0; i<num_shares;i++)
+    for(int j=0; j<num_shares;j++)
     {
         buy_prices.push_back(price);
     }
@@ -106,7 +105,7 @@ void Strategy::buy(int num_shares, float price)
 void Strategy::run(float std_devs, int num_prices)
 {
     //runs the trading strategy...
-    string file_path = "C:/Users/Class2016/Downloads/ADS.csv"; 
+    string file_path = "/home/b1/Bollinger_Bands-master/CSV/CAT.csv"; 
     //Change this to the appropriate path
     vector<float> price_data = read_csv(file_path);
     signal = 0;
